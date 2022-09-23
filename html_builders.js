@@ -1,4 +1,4 @@
-function BuildObject(type, attributes, children) {
+function _Object(type, attributes, children) {
     var element = document.createElement(type)
 
     for (key in attributes) {
@@ -27,14 +27,14 @@ function append(element, to_append) {
     return element
 }
 
-function Div(attributes, children) {return BuildObject('div', attributes, children)}
-function Button(attributes, children) {return BuildObject('button', attributes, children)}
-function Br(attributes, children) {return BuildObject('br', attributes, children)}
-function Input(attributes, children) {return BuildObject('input', attributes, children)}
-function Label(attributes, children) {return BuildObject('label', attributes, children)}
-function Select(attributes, children) {return BuildObject('select', attributes, children)}
-function Option(attributes, children) {return BuildObject('option', attributes, children)}
-function Optgroup(attributes, children) {return BuildObject('optgroup', attributes, children)}
-function H1(attributes, children) {return BuildObject('h1', attributes, children)}
-function H2(attributes, children) {return BuildObject('h2', attributes, children)}
-function H3(attributes, children) {return BuildObject('h3', attributes, children)}
+function _div(attributes, children) {return _Object('div', attributes, children)}
+function _button(attributes, children) {return _Object('button', attributes, children)}
+function _br(attributes, children) {return _Object('br', attributes, children)}
+function _input(attributes, children) {return _Object('input', attributes, children)}
+function _label(attributes, children) {return _Object('label', attributes, children)}
+function _select(attributes, children) {return _Object('select', attributes, children)}
+function _option(attributes, children) {return _Object('option', attributes, children)}
+function _optgroup(attributes, children) {return _Object('optgroup', attributes, children)}
+function _h1(attributes, children) {return _Object('h1', attributes, children)}
+function _h2(attributes, children) {return _Object('h2', attributes, children)}
+function _h3(attributes, children) {return _Object('h3', attributes, children)}
