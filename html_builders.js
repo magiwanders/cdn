@@ -1,6 +1,6 @@
 function BuildObject(type, attributes, children) {
     var element = document.createElement(type)
-  
+
     for (key in attributes) {
       element.setAttribute(key, attributes[key])
     }
@@ -14,7 +14,7 @@ function BuildObject(type, attributes, children) {
             })
         }
     }
-  
+
     return element
 }
 
@@ -35,3 +35,6 @@ function Label(attributes, children) {return BuildObject('label', attributes, ch
 function Select(attributes, children) {return BuildObject('select', attributes, children)}
 function Option(attributes, children) {return BuildObject('option', attributes, children)}
 function Optgroup(attributes, children) {return BuildObject('optgroup', attributes, children)}
+function H1(attributes, children) {return BuildObject('h1', attributes, children)}
+function H2(attributes, children) {return BuildObject('h2', attributes, children)}
+function H3(attributes, children) {return BuildObject('h3', attributes, children)}
