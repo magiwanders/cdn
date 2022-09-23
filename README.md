@@ -17,7 +17,7 @@ Where:
  
 Note that only some types are supported (see inside the ```html_builders.js``` file, I just did not write the ones I haven't used yet)
 
-In case the type you want to use is not supported add it to the file and pull request (see the [Contributions](#contributions)) section or use the basic function:
+In case the type you want to use is not supported add it to the file and pull request (see the [Contributions](#contributions) section) or use the basic function:
 
 ```javascript
 BuildObject('type', {<attributes>}, <children>)
