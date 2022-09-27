@@ -2,14 +2,7 @@ function _Object(type, attributes, children) {
     var element = document.createElement(type)
 
     for (key in attributes) {
-        var attribute = attributes[key]
-      if (key=='style') {
-        for (style_key in attributes[key]) {
-            element.setAttribute
-        }
-      } else {
-      }
-      element.setAttribute(key, attribute)
+      element.setAttribute(key, attributes[key])
     }
 
     if (children != undefined) {
