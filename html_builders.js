@@ -1,17 +1,13 @@
 function _Object(type, attributes, children) {
     var element = document.createElement(type)
 
-    for (key in attributes) {
-      element.setAttribute(key, attributes[key])
-    }
+    for (key in attributes) element.setAttribute(key, attributes[key])
 
     if (children != undefined) {
         if (children[0] == undefined || typeof children === 'string') {
             element = append(element, children)
         } else {
-            children.forEach(child => {
-                element = append(element, child)
-            })
+            children.forEach( child => { element = append(element, child) } )
         }
     }
 
