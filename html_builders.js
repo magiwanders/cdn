@@ -40,20 +40,6 @@ function buildAllHTMLFunctions() {
     }
 }
 
-// function _div(attributes, children) {return _Object('div', attributes, children)}
-// function _button(attributes, children) {return _Object('button', attributes, children)}
-// function _br(attributes, children) {return _Object('br', attributes, children)}
-// function _input(attributes, children) {return _Object('input', attributes, children)}
-// function _label(attributes, children) {return _Object('label', attributes, children)}
-// function _select(attributes, children) {return _Object('select', attributes, children)}
-// function _option(attributes, children) {return _Object('option', attributes, children)}
-// function _optgroup(attributes, children) {return _Object('optgroup', attributes, children)}
-// function _h1(attributes, children) {return _Object('h1', attributes, children)}
-// function _h2(attributes, children) {return _Object('h2', attributes, children)}
-// function _h3(attributes, children) {return _Object('h3', attributes, children)}
-// function _a(attributes, children) {return _Object('a', attributes, children)}
-// function _canvas(attributes, children) {return _Object('canvas', attributes, children)}
-
 // Ignored tags: !DOCTYPE, comment, var
 HTMLTagList = [
     'html', 'head', 'body', 'title',
