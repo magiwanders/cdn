@@ -36,7 +36,7 @@ function append(element, to_append) {
 
 function buildAllHTMLFunctions() {
     for(var i=0; i<HTMLTagList.length; i++) {
-        window['_'+HTMLTagList[i]] = new Function('attributes', 'children', '_Object(HTMLTagList[i], attributes, children)')
+        window['_'+HTMLTagList[i]] = new Function('attributes', 'children', '_Object('+HTMLTagList[i]+', attributes, children)')
     }
 }
 
