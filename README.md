@@ -5,11 +5,11 @@ This is an extremely simple set of utility functions in vanilla JavaScript to ma
 ## Basic Usage
 
 ```javascript
-<type>({<attributes>}, <children>)
+_<type>({<attributes>}, <children>)
 ```
 
 Where:
- - ```<type>``` is the name of the HTML element with a prefix underscore (```_div``` for ```<div>```, ```_br``` for ```<br>``` and so on)
+ - ```_<type>``` is the name of the HTML element with a prefix underscore (```_div``` for ```<div>```, ```_br``` for ```<br>``` and so on)
  - ```{<attributes>}``` is a JSON-like set of attributes (example: ```{id: 'thiselement', style:'height:100%; width:40px;'}``` )
  - ```<children>``` is either a simple ```string```, an element described with this same function fromat or an array of such elements.
      - Examples of valid ```<children>``` inputs:
@@ -24,8 +24,6 @@ Where:
          ]
          ```
  
-Note that only some types are supported (see inside the ```html_builders.js``` file, I just did not write the ones I haven't used yet)
-
 In case the type you want to use is not supported add it to the file and pull request (see the [Contributions](#contributions) section) or use the basic function:
 
 ```javascript
@@ -55,11 +53,11 @@ We can use the JavaScript code :
 
 ```javascript
 document.getElementById('container').appendChild(
-  Div({id: 'simulation_controls', style: 'height:500px; width:100%; pointer-events:painted;'},
+  _div({id: 'simulation_controls', style: 'height:500px; width:100%; pointer-events:painted;'},
     [
-        Button({id: 'toggle_simulation'}, 'Pause'), 'or',
-        Button({id: 'step'}, 'Step'), ' the simulation',
-        Br(), Br()
+        _button({id: 'toggle_simulation'}, 'Pause'), 'or',
+        _button({id: 'step'}, 'Step'), ' the simulation.',
+        _br(), _br()
     ]
   )
 )
@@ -79,13 +77,7 @@ Resulting in:
 
 ## Contributions
 
-To add support for example to the HTML element ```option``` add to the ```html_builders.js``` file the line:
-
-```javascript
-function _option(attributes, children) {return BuildObject('option', attributes, children)}
-```
-
-And instead of:
+To add support for example to the HTML element ```option``` add the string ```'option'``` to the ```HTMLTagList``` constant, and instead of:
 
 ```javascript
 _Object('option', {<attributes>}, <children>)
