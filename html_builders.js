@@ -54,7 +54,7 @@ function buildAllHTMLFunctions() {
 // function _a(attributes, children) {return _Object('a', attributes, children)}
 // function _canvas(attributes, children) {return _Object('canvas', attributes, children)}
 
-// Ignored tags: !DOCTYPE, comment
+// Ignored tags: !DOCTYPE, comment, var
 HTMLTagList = [
     'html', 'head', 'body', 'title',
     'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
@@ -70,7 +70,6 @@ HTMLTagList = [
     'progress',
     'template',
     'time',
-    'var',
     'form', 'input', 'textarea', 'button', 'fieldset', 'legend', 'datalist', 'output',
     'label', 'select', 'optgroup', 'option',
     'iframe',
