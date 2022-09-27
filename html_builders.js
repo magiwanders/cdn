@@ -41,7 +41,7 @@ function buildAllHTMLFunctions() {
 }
 
 // Ignored tags: !DOCTYPE, comment, var
-HTMLTagList = [
+const HTMLTagList = [
     'html', 'head', 'body', 'title',
     'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
     'p', 'b', 'i', 'em', 'mark', 'small', 'strong', 'sub', 'sup', 'br', 'wbr',
