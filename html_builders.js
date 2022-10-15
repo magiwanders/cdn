@@ -78,7 +78,10 @@ function Table(model) {
         for (var cell_model of row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
         rows.push( cells )
     }
-    
+
+    console.log(head_cells)
+    console.log(rows)
+
     return _table({style: tg}, 
         [
             _thead({}, _tr({}, head_cells)),
