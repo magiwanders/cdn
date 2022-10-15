@@ -76,13 +76,13 @@ function Table(model) {
     for (var row_model of model.body) {
         var cells = []
         for (var cell_model of row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
-        rows.push( _tr({}, cells) )
+        rows.push( cells )
     }
-
+    
     return _table({style: tg}, 
         [
             _thead({}, _tr({}, head_cells)),
-            _tbody({}, rows )
+            _tbody({}, rows.map((row)=>{return _tr({}, row)}) )
         ]
     )
 }
