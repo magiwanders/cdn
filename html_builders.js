@@ -64,28 +64,22 @@ function Table(model) {
     var tg = 'border-collapse:collapse;border-spacing:0;'
     var th = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;'
     var td = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;'
-    var tablehead = 'border-color:#000000;text-align:center;vertical-align:top'
-    var tablerow = 'border-color:#000000;text-align:left;vertical-align:top'
-
-    var head_cells = []
-
-    for (var head_cell_model of model.head) head_cells.push( _th({style: th+tablehead, colspan: head_cell_model.colspan}), head_cell_model.innerText)
-
-    var rows = []
-
-    for (var row_model of model.body) {
-        var cells = []
-        for (var cell_model of row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
-        rows.push( cells )
-    }
-
-    console.log(head_cells)
-    console.log(rows)
+    var tablehead = 'border-color:#000000;text-align:center;vertical-align:top;'
+    var tablerow = 'border-color:#000000;text-align:left;vertical-align:top;'
 
     return _table({style: tg}, 
         [
-            _thead({}, _tr({}, head_cells)),
-            _tbody({}, rows.map((row)=>{return _tr({}, row)}) )
+            _thead({}, _tr({}, 
+                model.head.map( (head_cell) => {
+                    return _th({id: model.name+'_0_'+model.head.indexOf(head_cell), style: th+tablehead+'background-color:'+head_cell.background+';', colspan: head_cell.colspan ? head_cell.colspan : 1, rowspan: head_cell.rowspan ? head_cell.rowspan : 1}, head_cell.innerText) } 
+                ))
+            ),
+            _tbody({}, model.body.map((row) => {
+                return _tr({}, row.map( (cell) => {
+                    return _td({id: model.name+'_'+(model.body.indexOf(row)+1)+'_'+row.indexOf(cell), style: td+tablerow+'background-color:'+cell.background+';', colspan: cell.colspan ? cell.colspan : 1, rowspan: cell.rowspan ? cell.rowspan : 1}, cell.innerText)
+                } ))
+            }) 
+            )
         ]
     )
 }
