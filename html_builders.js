@@ -69,13 +69,13 @@ function Table(model) {
 
     var head_cells = []
 
-    for (var head_cell_model in model.head) head_cells.push( _th({style: th+tablehead, colspan: head_cell_model.colspan}), head_cell_model.innerText)
+    for (var head_cell_model of model.head) head_cells.push( _th({style: th+tablehead, colspan: head_cell_model.colspan}), head_cell_model.innerText)
 
     var rows = []
 
-    for (var row_model in model.body) {
+    for (var row_model of model.body) {
         var cells = []
-        for (var cell_model in row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
+        for (var cell_model of row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
         rows.push( cells )
     }
 
