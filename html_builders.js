@@ -67,7 +67,7 @@ function Table(model) {
     var tablehead = 'border-color:#000000;text-align:center;vertical-align:top;'
     var tablerow = 'border-color:#000000;text-align:left;vertical-align:top;'
 
-    return _table({style: tg}, 
+    return _table({id: model.name, style: tg}, 
         [
             _thead({}, _tr({}, 
                 model.head.map( (head_cell) => {
