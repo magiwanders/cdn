@@ -64,8 +64,8 @@ function Table(model) {
     var tg = 'border-collapse:collapse;border-spacing:0;'
     var th = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;'
     var td = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;'
-    var tablehead = 'border-color:#000000;text-align:center;vertical-align:top;'
-    var tablerow = 'border-color:#000000;text-align:left;vertical-align:top;'
+    var tablehead = 'border-color:#000000;text-align:center;vertical-align:center;'
+    var tablerow = 'border-color:#000000;text-align:center;vertical-align:center;'
 
     return _table({id: model.name, style: tg}, 
         [
