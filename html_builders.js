@@ -28,7 +28,6 @@ function buildAllHTMLFunctions() {
         window['_'+HTMLTagList[i]] = new Function('attributes', 'children', 'return _Object("'+HTMLTagList[i]+'", attributes, children)')
     }
 }
-buildAllHTMLFunctions()
 
 // Ignored tags: !DOCTYPE, comment, var
 const HTMLTagList = [
@@ -59,7 +58,8 @@ const HTMLTagList = [
     'meta', 'base',
     'script', 'noscript', 'embed', 'object', 'param'
 ]
-
+buildAllHTMLFunctions()
+/////////////////////////////////////////////////
 function Table(model) {
     var tg = 'border-collapse:collapse;border-spacing:0;'
     var th = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;'
