@@ -28,6 +28,7 @@ function buildAllHTMLFunctions() {
         window['_'+HTMLTagList[i]] = new Function('attributes', 'children', 'return _Object("'+HTMLTagList[i]+'", attributes, children)')
     }
 }
+buildAllHTMLFunctions()
 
 // Ignored tags: !DOCTYPE, comment, var
 const HTMLTagList = [
@@ -59,4 +60,29 @@ const HTMLTagList = [
     'script', 'noscript', 'embed', 'object', 'param'
 ]
 
-buildAllHTMLFunctions()
+function Table(model) {
+    var tg = 'border-collapse:collapse;border-spacing:0;'
+    var th = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;'
+    var td = 'border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;'
+    var tablehead = 'border-color:#000000;text-align:center;vertical-align:top'
+    var tablerow = 'border-color:#000000;text-align:left;vertical-align:top'
+
+    var head_cells = []
+
+    for (var head_cell_model in model.head) head_cells.push( _th({style: th+tablehead, colspan: head_cell_model.colspan}), head_cell_model.innerText)
+
+    var rows = []
+
+    for (var row_model in model.body) {
+        var cells = []
+        for (var cell_model in row_model) cells.push( _td({style: td+tablerow, colspan: cell_model.colspan}), cell_model.innerText)
+        rows.push( cells )
+    }
+
+    return _table({style: tg}, 
+        [
+            _thead({}, _tr({}, ...head_cells)),
+            _tbody({}, ...rows )
+        ]
+    )
+}
