@@ -82,7 +82,7 @@ function Table(model) {
     return _table({style: tg}, 
         [
             _thead({}, _tr({}, ...head_cells)),
-            _tbody({}, ...rows )
+            _tbody({}, rows )
         ]
     )
 }
