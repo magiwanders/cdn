@@ -1,4 +1,4 @@
-import { ms } from "./util/misc"
+import { ms } from "./util/misc.js"
 // import { DynamicWorkerWithoutAck } from "./util/dynamic-worker-classes"
 // import { AshSim } from "./ash-sim"
 
